@@ -1,0 +1,1 @@
+Here are all the imp points to be remembered..!!!
