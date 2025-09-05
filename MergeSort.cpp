@@ -8,7 +8,7 @@ void merge(vector<int> &arr, int low, int mid, int high){
 
     vector<int> temp;
 
-    while(left <= mid && right <= high){
+    while(left<=mid && right<=high){
 
         if(arr[left] <= arr[right]) {
             temp.push_back(arr[left]);
@@ -37,27 +37,23 @@ void merge(vector<int> &arr, int low, int mid, int high){
 
 }
 
-void ms(vector<int> &arr, int low, int high){
+void mergeSort(vector<int> &arr, int low, int high){
 
     if(low==high) return;
 
     int mid = (low + high) / 2;
 
-    ms(arr, low, mid);
-    ms(arr, mid+1, high);
+    mergeSort(arr, low, mid);
+    mergeSort(arr, mid+1, high);
     merge(arr, low, mid, high);
 }
 
-void mergeSort(vector<int> &arr, int n){
-
-    ms(arr, 0, n-1);
-}
 
 int main(){
 
     vector<int> arr = {3,2,4,1,3};
 
-    mergeSort(arr, 5);
+    mergeSort(arr, 0, arr.size()-1);
 
     for (int i=0; i<5; i++){
         cout << arr[i] << " " ;
