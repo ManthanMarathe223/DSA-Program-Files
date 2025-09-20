@@ -23,6 +23,31 @@ for (int i = low; i <= high; i++) {
 
 ---
 
+## 🔹 Shell Sort
+
+### Shell Sort means Gap.
+- Calculate gap using index or using number of elements, which is divided by 2.
+- Gap is calculated till its not equal to 1.
+
+### 3 nested for loops
+- 1st for Gap.
+- 2nd for j.
+    - j will be gap and inc by 1
+
+- 3rd for i.
+    - Which is i=j-gap.
+    - Firstly, will check in forward manner means i and i+gap( which is j).
+    - Then, will check in backward direction as i-=gap.
+    - We campare it as 
+    ```cpp
+    if(a[i]>a[i+gap])
+    ```
+    Because we check j value only once and after that only backward
+    comparison is done with i-=gap(i). 
+    - 
+
+---
+
 ## 🔹 Insertion Sort 
 
 - Start from 1st index as 0th index is initially sorted.
