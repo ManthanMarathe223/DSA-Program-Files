@@ -61,7 +61,6 @@ public:
         }
 
         printLL();
-
     }
 
     void pop_front(){
@@ -77,7 +76,6 @@ public:
         delete temp;
 
         printLL();
-
     }
 
     void pop_back(){
@@ -97,9 +95,7 @@ public:
         delete tail;
         tail = temp;
 
-
         printLL();
-
     }
 
     void insert(){
@@ -110,7 +106,7 @@ public:
         cin >> val ;
         cout << endl;
 
-        cout << "Enter Numberic Position: ";
+        cout << "Enter Numeric Position: ";
         cin >> pos;
         cout << endl;
 
@@ -128,14 +124,12 @@ public:
         }
 
         if(pos>len || pos == len){
-
             cout << "Inserted at last..\n";
             push_back();
         }
        
         if(pos == 0){
-                push_front();
-                return;
+            push_front();
         }
 
         Node *temp = head;
@@ -150,7 +144,6 @@ public:
         temp->next = newNode;
 
         printLL();
-
     }
 
     int searchLL(){
@@ -170,10 +163,8 @@ public:
 
         while(temp != NULL){
 
-            if(temp->data == v){
-                
-                return idx;
-            }
+            if(temp->data == v) return idx;
+
             temp = temp->next;
             idx++;
         }
@@ -212,8 +203,8 @@ int main(){
     int i;
 
     do{
-        cout << "\n--------------------------------------------------Linked List Operations Started--------------------------------------------\n\n";
-        cout << "Choices -> \t 1.Push Front \t 2.Push Back \t 3.Insert \t 4.Pop Front \t 5.Pop Back \t 6.Search \t 0.Exit\n\n";
+        cout << "\n---------------------------------------------Linked List Operations Started--------------------------------------------\n\n";
+        cout << "Choices -> \n\n\t 1.Push Front \t 2.Push Back \t 3.Insert \t 4.Pop Front \t 5.Pop Back \t 6.Search \t 0.Exit\n\n";
         cout << "Enter Your Choice: ";
         cin >> input;
 
