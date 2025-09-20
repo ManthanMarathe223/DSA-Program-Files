@@ -21,6 +21,12 @@ for (int i = low; i <= high; i++) {
 ```
 - [i - low] is used because temp always starts from index 0, but in the original array, the subarray might start at    index low.
 
+#### Time & Space Complexity
+- Time Complexity : O(nlogn) Best for Less Time
+
+- Space Complexity : O(n)       
+                  - Merge Sort requires extra memory for temp arr so O(n).
+
 ---
 
 ## 🔹 Shell Sort
@@ -45,6 +51,47 @@ for (int i = low; i <= high; i++) {
     Because we check j value only once and after that only backward
     comparison is done with i-=gap(i). 
     - 
+
+---
+
+## 🔹 Quick Sort
+
+### Consider Last element is 'Pivot':
+- Firstly, find pivot and place lesser value to left and greater to right.
+- Recursion for Left partition and Right as well.
+- Continue recursion till (start < end).
+
+### Pivot Finding Logic:
+- Initially 'idx' variable initialize to -1.
+- Pivot is last element of the array.
+- for loop of 'j' from start to < end. 
+- Compare every 'j' value with pivot. 
+``` if(arr[j]<pivot) ``` 
+- Increment 'idx' and swap with j
+- Lastly, inc. 'idx' and swap with pivot, to place it at correct position. Ret 'idx'
+
+### Doubt clearing:
+```cpp
+idx++;
+swap(arr[end], arr[idx]);
+```
+why not
+```cpp
+idx++;
+swap(pivot, arr[idx]);
+```
+-Becoz, it will swap the value with local variable and not with the array index.
+
+
+#### Time & Space Complexity
+- Time Complexity : Avg/Practical Case => O(nlogn)
+                  -   Worst Case => O(n^2) 
+                  If, pivot value is either largest or smallest.
+
+- Space Complexity : O(1)       Best for Less Memory
+                  -  As no extra space is required
+                  - That's why QS is used over Merge Sort as when less memory is req QS is best.
+                  - Merge Sort requires extra memory for temp arr so O(n).
 
 ---
 
