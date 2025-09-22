@@ -1,4 +1,3 @@
-
-    ll.push_back(10);
-    ll.push_back(111);
-    ll.push_back(1221);
+ase 2:
+            ll.push_back();
+            break;
