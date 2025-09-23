@@ -1,87 +1,28 @@
 #include<iostream>
 using namespace std;
 
-class Node{
-public:
-    int data;
-    Node *next;
+void insertionSort(int arr[], int n){
 
-    Node(int v){
-        data = v;
-        next = nullptr;
-    }
-};
+    for (int i=1; i<n; i++){
+        int curr = arr[i];
+        int prev = i-1;
 
-class List{
-
-    Node *head;
-    Node *tail;
-
-public:
-
-    List(){
-        head = tail = nullptr;
+        while(prev >=0 && arr[prev]>curr){
+            arr[prev+1] = arr[prev];
+            prev--;
+        }
+        arr[prev+1] = curr;
     }
 
-    void push_front(){
-
-        int data;
-        cout << "\n Enter Data: ";
-        cin >> data;
-
-        Node *newNode = new Node(data);
-
-        if(head==NULL){
-            head=tail=newNode;
-        }
-        else{
-            newNode->next = head;
-            head = newNode;
-        }
-
-        printLL();
+    for(int i=0; i<n; i++){
+        cout << arr[i] << " ";
     }
-
-    void printLL(){
-
-        if(head==NULL){
-            cout << "LL is empty..!!";
-        }
-        else{
-
-            Node *temp = head;
-
-            while(temp!=NULL){
-                cout<< temp->data << " ";
-                temp = temp->next;
-            }
-            cout << endl;
-        }
-    }
-};
+}
 
 int main(){
+    int arr[] = {2,4,3,1,5,6};
 
-    int n;
-    List l;
-
-    
-    do{
-        cout << "\t 1.Push Front \t " << endl;
-        cout << "Enter your Choice: ";
-        cin >> n;
-
-        switch(n){
-            
-            case 1: 
-            l.push_front();
-            break;
-
-            default:
-            cout << "Invalid Choice..!!";
-
-        }
-    } while(n != 0);
+    insertionSort(arr,6);
 
     return 0;
 }
